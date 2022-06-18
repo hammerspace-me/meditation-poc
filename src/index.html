@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Metaful" />
+  <meta property="og:description" content="Meditation in the Metaverse" />
+  <meta property="og:url" content="https://meditation-poc.herokuapp.com" />
+  <script src="./js/config.js"></script>
+  <title>Metaful</title>
+  <style>
+    html,
+    body {
+      background: #F9F7FA;
+      color: #242123;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      min-height: 100%;
+      min-width: 100%
+    }
+
+    #logo {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 15px
+    }
+
+    .row {
+      display: grid;
+      grid-gap: 40px;
+    }
+
+    .row-1 {
+      grid-template-columns: 1fr;
+    }
+
+    .row-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .row-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    button.filter-button {
+      margin: 10px;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      border-radius: 5px;
+      padding: 10px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0);
+      cursor: pointer;
+    }
+
+    button.filter-button:hover {
+      color: #D28EE9;
+      text-decoration: none;
+      border: 1px solid #D28EE9;
+    }
+
+    button.filter-button.active {
+      color: #D28EE9;
+      background-color: #FBF4FD;
+      text-decoration: none;
+      border: 1px solid #D28EE9;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 2px;
+      line-height: 46px
+    }
+
+    h2 {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 36px
+    }
+
+    p {
+      color: #AEAEB0;
+      font-size: 18px;
+      line-height: 32px;
+      font-weight: 300;
+      margin: 30px 0
+    }
+
+    a {
+      color: #AEAEB0;
+      text-decoration: none;
+      transition: all .2s ease;
+      text-decoration: underline;
+      border: 1px solid rgba(255, 255, 255, 0);
+    }
+
+    a:hover {
+      color: #D28EE9;
+      text-decoration: underline
+    }
+
+    nav,
+    footer {
+      align-items: center;
+      display: flex;
+      height: 70px;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 0;
+      width: 100%
+    }
+
+    .meditation-box {
+      border-radius: 8px;
+      background-color: #FFFFFF;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0);
+      transition: all .2s ease;
+      min-height: 300px;
+    }
+
+    .meditation-box:hover {
+      cursor: pointer;
+      border: 1px solid #D28EE9;
+      box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+      transform: translate3d(0px, -1px, 0px);
+    }
+
+    span.meditation-box-pill {
+      border-radius: 20px;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 300;
+      padding: 8px;
+      background-color: #FBF4FD;
+      color: #D28EE9;
+    }
+
+    span.meditation-box-pill-live {
+      border-radius: 20px;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 300;
+      padding: 8px;
+      background-color: #FEE2D4;
+      color: #FE5700;
+    }
+
+    #filters {
+      margin: 20px 0px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .not-show {
+      display: none;
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        width: calc(100% - 30px)
+      }
+
+      .row-4,
+      .row-2 {
+        grid-template-columns: repeat(1, 1fr)
+      }
+    }
+
+    @media (min-width: 576px) and (max-width: 768px) {
+      .container {
+        max-width: 540px
+      }
+
+      .row-4,
+      .row-2 {
+        grid-template-columns: repeat(1, 1fr)
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 992px) {
+      .container {
+        max-width: 720px
+      }
+    }
+
+    @media (min-width: 992px) and (max-width: 1200px) {
+      .container {
+        max-width: 960px
+      }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1400px) {
+      .container {
+        max-width: 1140px
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .container {
+        width: 1320px
+      }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <div id="logo">
+        <h1>Metaful</h1>
+      </div>
+      <div id="nav-right">
+        <a href="">build a space</a>
+        <a href="">about</a>
+        <a href="">wallet</a>
+        <a href="">Protocol Labs</a>
+      </div>
+    </nav>
+    <div class="row row-2">
+      <div class="column" style="display:flex; flex-direction: column; justify-content:center;">
+        <h1>Enter the first ever meditation metaverse</h1>
+        <p>Metaful are beautiful social worlds where you can experience relaxing meditations.</p>
+      </div>
+      <div>
+        <img width="100%" style="object-fit: contain;" src="assets/illustration.png" />
+      </div>
+    </div>
+    <div class="row row-1">
+      <div id="filters">
+        <button class="filter-button active" onclick="filterSelection('all')">All</a>
+          <button class="filter-button" onclick="filterSelection('beginner')">Beginner</a>
+            <button class="filter-button" onclick="filterSelection('experienced')">Experienced</a>
+              <button class="filter-button" onclick="filterSelection('live')">Live</a>
+      </div>
+    </div>
+    <div class="row row-4" style="margin:20px 0px;">
+      <div class="meditation-box filter-beginner">
+        <div>
+          <div>
+            <span class="meditation-box-pill">15 mins</span>
+          </div>
+          <h2>Breather</h2>
+        </div>
+        <p>A short intro to Meditation in a virtual forest. Relax and inhalte to start.</p>
+      </div>
+    </div>
+    <footer style="text-align: center;justify-content: center;">
+      <a href="">Created with ❤️ by Protocol Labs Individual Contributors</a>
+    </footer>
+  </div>
+  <script>
+    document.querySelectorAll('.meditation-box').forEach(item => {
+      item.addEventListener('click', function (event) {
+        directToBackpackLogin()
+      })
+    })
+
+    function directToBackpackLogin() {
+      document.location.href =  config.BACKPACK_FRONTEND + "/experience-login?redirect=" + config.AVATAR_ROOM;
+    }
+
+    function filterSelection(selection) {
+      var elements = document.getElementsByClassName("meditation-box");
+      for (element of elements) {
+        if ((element.classList.contains('filter-' + selection) || selection == 'all')) {
+          element.classList.remove("not-show");
+        } else {
+          element.classList.add("not-show")
+        }
+      }
+
+      var filterButtons = document.getElementsByClassName("filter-button");
+      for (filterButton of filterButtons) {
+        if (filterButton.classList.contains('active')) {
+          filterButton.classList.remove('active');
+        }
+
+        if (filterButton.innerText && filterButton.innerText.toLowerCase() === selection) {
+          filterButton.classList.add('active');
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

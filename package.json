@@ -1,0 +1,21 @@
+{
+  "name": "@metaverse-backpack/backpack-meditation-poc",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node ./server/easyrtc-server.js",
+    "dev-socketio": "cross-env NODE_ENV=development node ./server/socketio-server.js",
+    "build": "npm run create-config",
+    "start": "node ./server/easyrtc-server.js",
+    "start-socketio": "node ./server/socketio-server.js",
+    "create-config": "node -r dotenv/config ./scripts/create-config.js"
+  },
+  "repository": "Metaverse-Backpack/backpack-meditation-poc",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.3",
+    "open-easyrtc": "^2.0.13",
+    "socket.io": "^2.4.1",
+    "web3.storage": "^3.5.6"
+  }
+}
