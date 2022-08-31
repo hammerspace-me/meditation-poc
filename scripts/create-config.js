@@ -6,9 +6,9 @@ const configAsString = `const config = {
   EXPERIENCE: "${process.env.EXPERIENCE}",
   AVATAR_ROOM: "${process.env.AVATAR_ROOM}",
   IPFS_GATEWAY: "${process.env.IPFS_GATEWAY}",
-  CLIENT_ID: "${process.env.CLIENT_URI}",
+  CLIENT_ID: "${process.env.CLIENT_ID}",
   REDIRECT_URI: "${process.env.REDIRECT_URI}",
-  SCOPE: "${process.env.SCOPE}"
+  SCOPE: "${process.env.SCOPE}",
 };
 `;
 
