@@ -284,12 +284,12 @@
       document.querySelectorAll(".meditation-box").forEach((item) => {
         item.addEventListener("click", function (event) {
           event.preventDefault();
-          directToBackpackOAuth2()
+          directToHammerspaceOAuth2()
         });
       });
 
-      function directToBackpackOAuth2() {
-        document.location.href = config.BACKPACK_FRONTEND + '/oauth/authorize?response_type=token&client_id=' + config.CLIENT_ID + '&redirect_uri=' + config.REDIRECT_URI + '&scope=' + config.SCOPE;
+      function directToHammerspaceOAuth2() {
+        document.location.href = config.HAMMERSPACE_FRONTEND + '/oauth/authorize?response_type=token&client_id=' + config.CLIENT_ID + '&redirect_uri=' + config.REDIRECT_URI + '&scope=' + config.SCOPE;
       }
     </script>
   </body>

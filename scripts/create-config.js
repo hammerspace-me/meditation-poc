@@ -1,8 +1,8 @@
 const fs = require("fs");
 
 const configAsString = `const config = {
-  BACKPACK_BACKEND: "${process.env.BACKPACK_BACKEND}",
-  BACKPACK_FRONTEND: "${process.env.BACKPACK_FRONTEND}",
+  HAMMERSPACE_BACKEND: "${process.env.HAMMERSPACE_BACKEND}",
+  HAMMERSPACE_FRONTEND: "${process.env.HAMMERSPACE_FRONTEND}",
   EXPERIENCE: "${process.env.EXPERIENCE}",
   AVATAR_ROOM: "${process.env.AVATAR_ROOM}",
   IPFS_GATEWAY: "${process.env.IPFS_GATEWAY}",

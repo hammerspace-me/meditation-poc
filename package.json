@@ -1,5 +1,5 @@
 {
-  "name": "@metaverse-backpack/backpack-meditation-poc",
+  "name": "@hammerspace-me/meditation-poc",
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node ./server/easyrtc-server.js",
@@ -9,7 +9,7 @@
     "start-socketio": "node ./server/socketio-server.js",
     "create-config": "node -r dotenv/config ./scripts/create-config.js"
   },
-  "repository": "Metaverse-Backpack/backpack-meditation-poc",
+  "repository": "hammerspace-me/meditation-poc",
   "dependencies": {
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
